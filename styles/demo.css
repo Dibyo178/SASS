@@ -1,0 +1,142 @@
+/* browser rest code */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: 0;
+          box-sizing: 0;
+}
+
+.btn, .button-download, .add-more {
+  border: none;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.button-download {
+  background: yellow;
+}
+
+#about p {
+  font-size: 20px;
+  text-align: left;
+  margin: 10px 0;
+}
+
+#education p {
+  font-size: 15px;
+  text-align: justify;
+  margin: 10px 0;
+}
+
+header {
+  background: #ffab74;
+  color: #ff3434;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+nav ul li a:hover {
+  background: yellow;
+}
+
+main {
+  background: #ff3434;
+}
+
+footer {
+  background: #74ffe8;
+}
+
+[class*="col-"] {
+  float: left;
+}
+
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33333%;
+}
+
+.col-5 {
+  width: 41.66667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33333%;
+}
+
+.col-8 {
+  width: 66.66667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33333%;
+}
+
+.col-11 {
+  width: 91.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.blue-text {
+  color: blue;
+}
+/*# sourceMappingURL=demo.css.map */

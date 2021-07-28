@@ -1,0 +1,225 @@
+@import "../reset";
+
+@import "../styles/variable";
+
+// @mixin uses
+
+// @mixin para-style {
+//   font-size: 15px;
+//   text-align: justify;
+//   margin: 10px 0;
+// }
+
+// .btn selector
+.btn {
+  border: none;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+@mixin setFontSize($value) {
+  @if $value==small {
+    font-size: 15px;
+  } @else if $value==medium {
+    font-size: 20px;
+  } @else if $value==large {
+    font-size: 25px;
+  } @else {
+    font-size: 0;
+  }
+}
+
+// .btn selector extend
+
+.button-download {
+  @extend .btn;
+  background: yellow;
+}
+
+.add-more {
+  @extend .btn;
+}
+
+@mixin para-style($font-size, $style) {
+  font-size: $font-size;
+  text-align: $style;
+  margin: 10px 0;
+}
+
+#about p {
+  // @include para-style;
+  @include para-style(20px, left);
+}
+
+#education p {
+  // @include para-style;
+  @include para-style(15px, justify);
+}
+
+// // color variable declearation
+
+// $header-bgcolor: #ffab74;
+// $main-bgcolor: #ff3434;
+// $footer-bgcolor: #74ffe8;
+
+// /* browser rest code */
+
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: 0;
+// }
+
+header {
+  background: $header-bgcolor;
+  color: #ff3434;
+}
+// nav nesting  styling
+
+nav {
+  margin-top: 15px;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      margin: 0 15px;
+
+      a {
+        color: black;
+        text-decoration: none;
+        padding: 15px;
+        transition: 0.4s;
+        border-radius: 5px;
+        @include setFontSize(small);
+      }
+      a:hover {
+        background: yellow;
+      }
+    }
+  }
+}
+
+// nav styling
+
+// nav {
+//   margin-top: 15px;
+// }
+// nav ul {
+//   list-style-type: none;
+// }
+
+// nav ul li {
+//   display: inline-block;
+//   margin: 0 15px;
+// }
+// nav ul li a {
+//   color: black;
+//   text-decoration: none;
+//   padding: 15px;
+//   transition: 0.4s;
+//   border-radius: 5px;
+// }
+
+// nav ul li a:hover {
+//   background: yellow;
+// }
+
+main {
+  background: $main-bgcolor;
+}
+
+footer {
+  background: $footer-bgcolor;
+}
+
+// column class
+
+[class*="col-"] {
+  float: left;
+}
+
+// for loop
+
+// @for $i from 1 through 12 {
+//   .col-#{$i} {
+//     width: 100% /12 * $i;
+//   }
+// }
+
+// while loop
+$i: 1; //initialize
+
+@while $i<13 {
+  // condition
+  .col-#{$i} {
+    width: 100% /12 * $i;
+  }
+
+  $i: $i + 1; //increment
+}
+// .col-1 {
+//   width: 8.33%;
+// }
+// .col-2 {
+//   width: 16.66%;
+// }
+// .col-3 {
+//   width: 25%;
+// }
+// .col-4 {
+//   width: 33.33%;
+// }
+// .col-5 {
+//   width: 41.66%;
+// }
+// .col-6 {
+//   width: 50%;
+// }
+// .col-7 {
+//   width: 58.33%;
+// }
+// .col-8 {
+//   width: 66.66%;
+// }
+// .col-9 {
+//   width: 75%;
+// }
+// .col-10 {
+//   width: 83.33%;
+// }
+// .col-11 {
+//   width: 91.66%;
+// }
+// .col-12 {
+//   width: 100%;
+// }
+
+.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+// map over items using @each
+
+// @each $color in red, green, black {
+//   .#{$color}-text {
+//     color: $color;
+//   }
+// }
+
+$colors: (
+  color1: red,
+  color2: green,
+  color3: blue,
+);
+
+@each $key, $color in $colors {
+  .#{$color}-text {
+    color: $color;
+  }
+}
